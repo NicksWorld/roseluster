@@ -3,14 +3,6 @@ local validate = require("lackluster.validate")
 ---@diagnostic disable: inject-field
 local M = {}
 
----limit keys, aka dont allow willy nilly tweaks to theme.ui
-local tweak_background_keys = {
-    "normal",
-    "menu",
-    "popup",
-    "telescope",
-}
-
 ---modify the colors base don setup's config.tweak_color
 M.color = function(tweak_color, color)
     for color_name, color_value in pairs(tweak_color) do
@@ -29,8 +21,7 @@ end
 
 ---modify the theme based on setup's config.tweak_background
 M.background = function(tweak_background, theme)
-    for _, key in ipairs(tweak_background_keys) do
-        local value = tweak_background[key]
+    for key, value in ipairs(tweak_background) do
         if value and (value ~= "default") then
             if validate.hexcode_or_none(value) then
                 if key == "telescope" then
@@ -45,24 +36,11 @@ M.background = function(tweak_background, theme)
     end
 end
 
----limit keys, aka dont allow willy nilly tweaks to theme.syntax
-local tweak_syntax_keys = {
-    "string",
-    "string_escape",
-    "comment",
-    "builtin",
-    "type",
-    "keyword",
-    "keyword_return",
-    "keyword_exception",
-}
-
 ---modify the theme based on setup's config.tweak_syntax
 ---@param tweak_syntax LacklusterConfigTweakSyntax
 ---@param theme LacklusterTheme
 M.syntax = function(tweak_syntax, theme)
-    for _, key in ipairs(tweak_syntax_keys) do
-        local value = tweak_syntax[key]
+    for key, value in pairs(tweak_syntax) do
         if value and (value ~= "default") then
             if validate.hexcode_or_none(value) then
                 theme.syntax_tweak[key] = value
