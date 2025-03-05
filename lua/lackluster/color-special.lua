@@ -9,8 +9,8 @@ return {
     popup_background = "#1A1A1A",
     statusline = "#242424",
     comment = "#3A3A3A",
-    exception = "#505050",
-    keyword = "#666666",
+    exception = "#7788AA",
+    keyword = "#885151",
     param = "#8E8E8E",
     whitespace = "#202020",
 }

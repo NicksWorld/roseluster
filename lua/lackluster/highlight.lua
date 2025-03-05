@@ -256,6 +256,9 @@ local highlight = function(theme, color)
                 spec.ln("@lsp.type.boolean", "@boolean"),
                 spec.ln("@lsp.type.enumMember", "@variable.member"),
 
+                -- treesitter misc
+                spec.fg("@module", theme.syntax.module),
+
                 --spell
                 spec.op("SpellBad", {
                     undercurl = theme.ui.use_undercurl,

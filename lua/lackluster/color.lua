@@ -19,4 +19,10 @@ return {
     gray7 = "#aaaaaa",
     gray8 = "#cccccc",
     gray9 = "#DDDDDD",
+
+    -- Additional colors
+    rose = "#AA6666",
+    lightrose = "#BB8484",
+    bluegray = "#737883",
+    darkblue = "#535F76"
 }
