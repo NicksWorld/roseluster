@@ -160,6 +160,12 @@ return function(color, color_special)
         warn = color.orange,
         unnecessary = color.gray4,
         deprecated = color.orange,
+
+        -- Spelling related
+        spellbad = color.red,
+        spellcap = color.orange,
+        spelllocal = color.hint,
+        spellrare = color.hint
     }
 
     ---@class LacklusterThemeFS

@@ -260,10 +260,24 @@ local highlight = function(theme, color)
                 spec.op("SpellBad", {
                     undercurl = theme.ui.use_undercurl,
                     underline = not theme.ui.use_undercurl,
+                    sp = theme.diagnostic.spellbad
                 }),
-                spec.ln("SpellLocal", "SpellBad"),
-                spec.ln("SpellCap", "SpellBad"),
-                spec.ln("SpellRare", "SpellBad"),
+                spec.op("SpellCap", {
+                    undercurl = theme.ui.use_undercurl,
+                    underline = not theme.ui.use_undercurl,
+                    sp = theme.diagnostic.spellcap
+                }),
+
+                spec.op("SpellLocal", {
+                    undercurl = theme.ui.use_undercurl,
+                    underline = not theme.ui.use_undercurl,
+                    sp = theme.diagnostic.spelllocal
+                }),
+                spec.op("SpellRare", {
+                    undercurl = theme.ui.use_undercurl,
+                    underline = not theme.ui.use_undercurl,
+                    sp = theme.diagnostic.spellrare
+                }),
 
                 -- diff
                 spec.fg("Added", theme.diff.add),
