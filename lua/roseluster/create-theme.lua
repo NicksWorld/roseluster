@@ -134,9 +134,9 @@ return function(color, color_special)
 
     ---@class LacklusterThemeDiff
     result.diff = {
-        add = color.green,
-        change = color.gray6,
-        delete = color.orange,
+        add = color.rose,
+        change = color.orange,
+        delete = color.red,
         info = color.gray5,
     }
 
